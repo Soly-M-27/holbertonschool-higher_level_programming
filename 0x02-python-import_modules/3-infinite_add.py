@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 import sys
+
+
 def check_string(argv):
     try:
         int(argv)
