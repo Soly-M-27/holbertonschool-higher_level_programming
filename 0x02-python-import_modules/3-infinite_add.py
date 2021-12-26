@@ -8,11 +8,12 @@ def check_string(argv):
         return False
 
 
-for arg in sys.argv[1:]:
-    if not check_string(arg):
-        break
+if __name__ == "__main__":
+    for arg in sys.argv[1:]:
+        if not check_string(arg):
+            break
 
-nums = [int(arg) for arg in sys.argv[1:]]
-sum = sum(nums)
+    nums = [int(arg) for arg in sys.argv[1:]]
+    sum = sum(nums)
 
-print("{}".format(sum))
+    print("{}".format(sum))
