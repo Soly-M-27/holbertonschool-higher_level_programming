@@ -4,7 +4,7 @@
 
 class Square:
     """ Square Defined """
-    __size = Non
+    __size = None
 
     def __init__(self, size=0):
         """ Docstring of __init___ method
