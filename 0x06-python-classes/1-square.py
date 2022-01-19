@@ -10,5 +10,5 @@ class Square:
         Args:
             size (int): size from main to be displayed
         """
-        self._Sqaure__size = size
+        self.__size = size
         """ int: Docstring *after* attribute, with type specified """
