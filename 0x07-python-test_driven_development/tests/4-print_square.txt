@@ -1,0 +1,70 @@
+============================================
+''' This is the Start of Unit Testing... '''
+============================================
+''' TESTTING WITH the following... '''
+
+''' Does the same as test below, but gives more details '''
+# python3 -m doctest -v ./tests/file_name.txt
+# python3 -m doctest -v ./tests/file_name.txt | tail -2
+
+======================================
+''' Importing TEMPLATE function''''
+======================================
+>>> print_square = __import__('4-print_square').print_square
+
+==============
+SUCCESS CASES
+==============
+
+Category 1
+==========
+ ''' Expected output '''
+
+>>> print_square(4)
+####
+####
+####
+####
+
+>>> print_square(4 - 3)
+#
+
+==========================
+CASES THAT SHOULD NOT WORK
+==========================
+
+Category 2
+==========
+''' Expected Error Outputs '''
+
+>>> print_square("hello")
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
+>>> print_square(hello)
+Traceback (most recent call last):
+...
+NameError: name 'hello' is not defined
+
+>>> print_square(4.5)
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
+>>> print_square(-1)
+Traceback (most recent call last):
+...
+ValueError: size must be >= 0
+
+>>> print_square(1e100)
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
+>>> print_square(#)
+Traceback (most recent call last):
+...
+SyntaxError: unexpected EOF while parsing
+
+"""
