@@ -1,0 +1,97 @@
+============================================
+''' This is the Start of Unit Testing... '''
+============================================
+''' TESTTING WITH the following... '''
+
+''' Does the same as test below, but gives more details '''
+# python3 -m doctest -v ./tests/file_name.txt
+# python3 -m doctest -v ./tests/file_name.txt | tail -2
+
+======================================
+''' Importing TEMPLATE function''''
+======================================
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+==============
+SUCCESS CASES
+==============
+
+Category 1
+==========
+ ''' Expected output '''
+
+>>> say_my_name("John", "Smith")
+My name is John Smith
+
+>>> say_my_name("BOB")
+My name is BOB 
+
+>>> say_my_name("", "")
+My name is  
+
+>>> say_my_name(" ", " ")
+My name is    
+
+>>> say_my_name("#", '?')
+My name is # ?
+
+>>> say_my_name("1e100", "20")
+My name is 1e100 20
+
+>>> say_my_name("\"Hellen\"", "\"Of Troy\"")
+My name is "Hellen" "Of Troy"
+
+==========================
+CASES THAT SHOULD NOT WORK
+==========================
+
+Category 2
+==========
+''' Expected Error Outputs '''
+
+>>> say_my_name(None, "Smith")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+>>> say_my_name("Sam", None)
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
+
+>>> say_my_name(None, None)
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+>>> say_my_name("Andy", 20)
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
+
+>>> say_my_name(3, "Odus")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+>>> say_my_name(2, 6)
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+>>> say_my_name("Joe", #)
+Traceback (most recent call last):
+...
+SyntaxError: unexpected EOF while parsing
+
+>>> say_my_name(#, "Ally")
+Traceback (most recent call last):
+...
+SyntaxError: unexpected EOF while parsing
+
+>>> say_my_name(#, #)
+Traceback (most recent call last):
+...
+SyntaxError: unexpected EOF while parsing
+
+"""
