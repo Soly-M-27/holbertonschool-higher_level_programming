@@ -4,14 +4,14 @@
 
 class Rectangle:
     """ Define a rectangle """
+    __width = None
+    __height = None
     number_of_instances = 0
     print_symbol = '#'
-    __height = None
-    __width = None
 
     def __init__(self, width=0, height=0):
-        self.height = height
         self.width = width
+        self.height = height
         Rectangle.number_of_instances += 1
 
     @property
