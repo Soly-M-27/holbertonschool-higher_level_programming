@@ -44,6 +44,9 @@ Category 1
 >>> add_integer(1, 2e100)
 20000000000000000318057822195198360936721617127890562779562655115495677544340762121626939971713630209
 
+>>> add_integer(1.5e100, 2)
+14999999999999999267208920533534235242810259434158468763468571810551997532349366721768062376180973570
+
 >>> add_integer(-100, 2)
 -98
 
@@ -100,5 +103,10 @@ SyntaxError: unexpected EOF while parsing
 Traceback (most recent call last):
 ...
 SyntaxError: unexpected EOF while parsing
+
+>>> add_integer(float("NaN"), 2)
+Traceback (most recent call last):
+...
+ValueError: cannot convert float NaN to integer
 
 """
