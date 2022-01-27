@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """ Task 3: function that prints a square with the character # """
 
 
