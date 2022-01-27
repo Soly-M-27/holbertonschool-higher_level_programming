@@ -37,7 +37,7 @@ Category 2
 ==========
 ''' Expected Error Outputs '''
 
->>> print_square("hello")
+>>> print_square("3")
 Traceback (most recent call last):
 ...
 TypeError: size must be an integer
@@ -52,7 +52,7 @@ Traceback (most recent call last):
 ...
 TypeError: size must be an integer
 
->>> print_square(-1)
+>>> print_square(-2)
 Traceback (most recent call last):
 ...
 ValueError: size must be >= 0
@@ -66,5 +66,10 @@ TypeError: size must be an integer
 Traceback (most recent call last):
 ...
 SyntaxError: unexpected EOF while parsing
+
+>>> print_square()
+Traceback (most recent call last):
+...
+TypeError: print_square() missing 1 required positional argument: 'size'
 
 """
