@@ -28,6 +28,7 @@ class Rectangle(BaseGeometry):
         self.__height = height
         BaseGeometry.integer_validator(self, width, height)
 
+
 class Square(Rectangle):
     """ Square defined """
     __size = None
