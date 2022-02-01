@@ -1,58 +1,54 @@
-============================================
-''' This is the Start of Unit Testing... '''
-============================================
-''' TESTTING WITH the following... '''
+The ``1-my_list`` module
+======================
 
-''' Does the same as test below, but gives more details '''
-# python3 -m doctest -v ./tests/file_name.txt
-# python3 -m doctest -v ./tests/file_name.txt | tail -2
+Using ``my_list``
+-------------------
 
-======================================
-''' Importing TEMPLATE function''''
-======================================
+My list is a class that inherits from integer, gets a list and print it sorted
+
 >>> MyList = __import__('1-my_list').MyList
 
-==============
-SUCCESS CASES
-==============
+Usage:
 
-Category 1
-==========
- ''' Expected output '''
+Create a list
+>>> n_list = MyList()
+>>> n_list.append(1)
+>>> n_list.append(6)
+>>> n_list.append(7)
+>>> n_list.append(4)
+>>> n_list.append(5)
+>>> n_list.append(2)
+>>> n_list.append(3)
 
->>>
+Print it normally
+>>> print(n_list)
+[1, 6, 7, 4, 5, 2, 3]
 
-==========================
-CASES THAT SHOULD NOT WORK
-==========================
+Print it with the sorted method
+>>> n_list.print_sorted()
+[1, 2, 3, 4, 5, 6, 7]
 
-Category 2
-==========
-''' Expected Error Outputs '''
+Change a number and print it sorted again
+>>> n_list[2] = 550
+>>> print(n_list)
+[1, 6, 550, 4, 5, 2, 3]
+>>> n_list.print_sorted()
+[1, 2, 3, 4, 5, 6, 550]
 
->>> 
-Traceback (most recent call last):
-...
-TypeError:
+Add a negative number
+>>> n_list = MyList()
+>>> n_list.append(1)
+>>> n_list.append(2)
+>>> n_list.append(3)
+>>> n_list.append(-1)
+>>> print(n_list)
+[1, 2, 3, -1]
+>>> n_list.print_sorted()
+[-1, 1, 2, 3]
 
->>> 
-Traceback (most recent call last):
-...
-TypeError:
-
->>> 
-Traceback (most recent call last):
-...
-TypeError: 
-
->>> 
-Traceback (most recent call last):
-...
-TypeError:
-
->>> 
-Traceback (most recent call last):
-...
-TypeError:
+Print a empty list
+>>> n_list = MyList()
+>>> n_list.print_sorted()
+[]
 
 """
