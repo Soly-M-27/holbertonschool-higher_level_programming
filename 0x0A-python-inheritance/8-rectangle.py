@@ -7,8 +7,6 @@ BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 class Rectangle(BaseGeometry):
     """ Rectangle defined """
-    __width = None
-    __height = None
 
     def __init__(self, width, height):
         """ Comment """
