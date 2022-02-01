@@ -2,5 +2,7 @@
 """ Module for BaseGeometry class """
 
 
-class BaseGeometry:
+class BaseGeometry():
+    """ Comment """
+
     pass
