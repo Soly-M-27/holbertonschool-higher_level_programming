@@ -3,6 +3,7 @@
 
 
 class MyList(list):
+    """ Uncomment """
 
     def print_sorted(self):
         print(sorted(self))
