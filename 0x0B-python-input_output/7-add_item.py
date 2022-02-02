@@ -12,5 +12,5 @@ try:
     my_list = load_from_json_file(filename)
     my_list.extend(sys.argv[1:])
 except:
-    print("cat: add_item.json: No such file or directory")
+    pass
 save_to_json_file(my_list, filename)
