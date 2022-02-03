@@ -27,6 +27,5 @@ class Student:
         return dictionary
 
     def reload_from_json(self, json):
-        if type(json) is dict:
-            for x in json:
-                setattr(self, x, json[x])
+        for x in json:
+            setattr(self, x, json[x])
