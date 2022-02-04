@@ -75,6 +75,12 @@ class Rectangle(Base):
         if self.__width == 0 or self.__height == 0:
             print("")
         for x in range(self.__height):
+            if self.__y != 0 and x == 0:
+                for cor_y in range(self.__y):
+                    string += '\n'
+            if self.__x != 0:
+                for cor_x in range(self.__x):
+                    string += " "
             string += '#'
             for y in range(self.__width - 1):
                 x *= y
