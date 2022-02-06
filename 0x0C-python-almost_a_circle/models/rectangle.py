@@ -13,11 +13,11 @@ class Rectangle(Base):
     __y = None
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
-        super().__init__(id)
 
     @property
     def width(self):
@@ -90,3 +90,10 @@ class Rectangle(Base):
 
     def __str__(self):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
+
+    def update(self, *args):
+        attributes = ["id", "width", "height", "x", "y"]
+        count = 0
+        for arg in args:
+            setattr(self, attributes[count], arg)
+            count += 1
