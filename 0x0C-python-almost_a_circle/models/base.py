@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Module class """
 import json
+import os
 
 
 class Base():
@@ -8,6 +9,9 @@ class Base():
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """ Docstring of __init__ method
+        Args:
+            id (int): integer representing identification number """
         if id is not None:
             self.id = id
         else:
@@ -16,6 +20,10 @@ class Base():
 
     @staticmethod
     def to_json_string(list_dictionaries):
+        """ Docstring to_json_string method which returns the JSON
+        string representation of list_dictionaries.
+        Args:
+            list_dictionaries (list): list of dictionaries"""
         if list_dictionaries is None:
             return "[]"
         else:
@@ -23,6 +31,10 @@ class Base():
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """ Docstring save_to_file method that writes the JSON string
+        representation of list_objs to a file.
+        Args:
+            list_objs (list): list of instances who inherits of Base """
         empty_list = []
         with open("{}.json".format(cls.__name__), "w", encoding='utf-8') as f:
             if list_objs is None:
@@ -33,6 +45,11 @@ class Base():
 
     @staticmethod
     def from_json_string(json_string):
+        """ Doctsring from_json_string method that returns the list of the JSON
+        string representation json_string.
+        Args:
+            json_string (string): string representation of a list
+            of dictionaries """
         empty_list = []
         if json_string is None:
             return empty_list
@@ -40,9 +57,28 @@ class Base():
 
     @classmethod
     def create(cls, **dictionary):
+        """ Docstring create method that returns instances with all attributes
+        already set.
+        Args:
+            **dictionary (double pointer): double pointer to a dictionary """
         if cls.__name__ == "Square":
             new_attr = cls(1)
         if cls.__name__ == "Rectangle":
             new_attr = cls(1, 1)
         new_attr.update(**dictionary)
         return new_attr
+
+    @classmethod
+    def load_from_file(cls):
+        """ Docstring load_from_file mathod that returns a list
+        of instances """
+        filename = "{}.json".format(cls.__name__)
+        empty_list = []
+        catch = []
+        isFile = os.path.isfile(filename)
+        if isFile:
+            with open(filename, "r", encoding='utf-8') as f:
+                catch = cls.from_json_string(f.read())
+            for inst in catch:
+                empty_list.append(cls.create(**inst))
+            return empty_list
