@@ -55,4 +55,9 @@ class Square(Rectangle):
     def to_dictionary(self):
         """ Docstring to_dictionary method that returns the
         dictionary representation of a Square """
-        return (self.__dict__)
+        return {
+                "id": self.id,
+                "x": self.x,
+                "size": self.width,
+                "y": self.y
+                }
