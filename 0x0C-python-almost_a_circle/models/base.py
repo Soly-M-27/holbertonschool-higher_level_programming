@@ -36,15 +36,12 @@ class Base():
         Args:
             list_objs (list): list of instances who inherits of Base """
         empty_list = []
-        filename = "{}.json".format(cls.__name__)
-        isFile = os.path.isfile(filename)
-        if not isFile:
-            with open(filename, "w", encoding='utf-8') as f:
-                if list_objs is None:
-                    f.write("[]")
-                for x in list_objs:
-                    empty_list.append(x.to_dictionary())
-                f.write(cls.to_json_string(empty_list))
+        with open("{}.json".format(cls.__name__), "w", encoding='utf-8') as f:
+            if list_objs is None:
+                f.write("[]")
+            for x in list_objs:
+                empty_list.append(x.to_dictionary())
+            f.write(cls.to_json_string(empty_list))
 
     @staticmethod
     def from_json_string(json_string):
