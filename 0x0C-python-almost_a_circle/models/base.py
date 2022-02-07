@@ -24,7 +24,7 @@ class Base():
         string representation of list_dictionaries.
         Args:
             list_dictionaries (list): list of dictionaries"""
-        if list_dictionaries is None:
+        if (list_dictionaries is None or len(list_dictionaries) == 0):
             return "[]"
         else:
             return json.dumps(list_dictionaries)
@@ -73,6 +73,37 @@ class Base():
         """ Docstring load_from_file mathod that returns a list
         of instances """
         filename = "{}.json".format(cls.__name__)
+        empty_list = []
+        catch = []
+        isFile = os.path.isfile(filename)
+        if isFile:
+            with open(filename, "r", encoding='utf-8') as f:
+                catch = cls.from_json_string(f.read())
+            for inst in catch:
+                empty_list.append(cls.create(**inst))
+            return empty_list
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ Docstring save_to_file_csv method that serializes and
+        deserializes in CSV.
+        Args:
+            list_objs (list):
+        """
+        filename = "{}.csv".format(cls.__name__)
+        empty_list = []
+        with open(filename, 'w', encoding='utf-8') as f:
+            if list_objs == empty_list or list_objs is None:
+                f.write("[]")
+            for x in list_objs:
+                empty_list.append(x.to_dictionary())
+            f.write(cls.to_json_string(empty_list))
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ Docstring load_from_file_csv method that returns a
+        list of instances """
+        filename = "{}.csv".format(cls.__name__)
         empty_list = []
         catch = []
         isFile = os.path.isfile(filename)
