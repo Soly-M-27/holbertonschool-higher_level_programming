@@ -7,21 +7,41 @@ class Square(Rectangle):
     """ class Square inhereting Rectangle """
 
     def __init__(self, size, x=0, y=0, id=None):
+        """ Docstring of the __init__ method.
+        Args:
+            size (int): integer that will be either width or height
+            x (int): x coordinate
+            y (int): u coordinate
+            id (int): integer of identification number """
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.height)
+        """ Docstring of __str__ method that returns a string """
+        return "[Square] ({}) {}/{} - \
+                {}".format(self.id, self.x, self.y, self.height)
 
     @property
     def size(self):
+        """ size getter """
         return self.width
 
     @size.setter
     def size(self, value):
+        """ size setter
+        Args:
+            value (int): Contains whatever width of height
+            number was passed """
         self.width = value
         self.height = value
 
     def update(self, *args, **kwargs):
+        """ Docstring update method that assigns attributes.
+        Args:
+            *args (list): list of arguments passed through multiple
+            parameters.
+            **kwargs (double pointer): if *args does not exist,
+            double pointer to dictionary will save the arguments
+            in key/value form. """
         attributes = ["id", "size", "x", "y"]
         if len(args) > 0:
             count = 0
@@ -33,4 +53,6 @@ class Square(Rectangle):
                 setattr(self, key, values)
 
     def to_dictionary(self):
+        """ Docstring to_dictionary method that returns the
+        dictionary representation of a Square """
         return (self.__dict__)
