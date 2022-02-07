@@ -37,3 +37,12 @@ class Base():
         if json_string is None:
             return empty_list
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        if cls.__name__ == "Square":
+            new_attr = cls(1)
+        if cls.__name__ == "Rectangle":
+            new_attr = cls(1, 1)
+        new_attr.update(**dictionary)
+        return new_attr
