@@ -140,4 +140,10 @@ class Rectangle(Base):
     def to_dictionary(self):
         """ Docstring to_dictionary method that returns the
         dictionary representation of a Rectangle """
-        return self.__dict__
+        return {
+                "x": self.__x,
+                "y": self.__y,
+                "id": self.id,
+                "height": self.height,
+                "width": self.width
+                }
