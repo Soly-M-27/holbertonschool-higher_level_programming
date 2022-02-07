@@ -15,11 +15,6 @@ class Square(Rectangle):
             id (int): integer of identification number """
         super().__init__(size, size, x, y, id)
 
-    def __str__(self):
-        """ Docstring of __str__ method that returns a string """
-        return "[Square] ({}) {}/{} - {}".\
-            format(self.id, self.x, self.y, self.height)
-
     @property
     def size(self):
         """ size getter """
@@ -33,6 +28,11 @@ class Square(Rectangle):
             number was passed """
         self.width = value
         self.height = value
+
+    def __str__(self):
+        """ Docstring of __str__ method that returns a string """
+        return "[Square] ({}) {}/{} - {}".\
+            format(self.id, self.x, self.y, self.height)
 
     def update(self, *args, **kwargs):
         """ Docstring update method that assigns attributes.
