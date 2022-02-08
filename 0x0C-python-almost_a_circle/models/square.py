@@ -28,10 +28,11 @@ class Square(Rectangle):
             number was passed """
         if (type(value) != int):
             raise TypeError("width must be an integer")
-        if (value <= 0):
+        elif (value <= 0):
             raise ValueError("width must be > 0")
-        self.width = value
-        self.height = value
+        else:
+            self.width = value
+            self.height = value
 
     def __str__(self):
         """ Docstring of __str__ method that returns a string """
