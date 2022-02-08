@@ -33,11 +33,6 @@ class Square(Rectangle):
         self.width = value
         self.height = value
 
-    def __str__(self):
-        """ Docstring of __str__ method that returns a string """
-        return ("[Square] ({}) {}/{} - {}"
-                .format(self.id, self.x, self.y, self.width))
-
     def update(self, *args, **kwargs):
         """ Docstring update method that assigns attributes.
         Args:
@@ -65,3 +60,8 @@ class Square(Rectangle):
                 "size": self.width,
                 "y": self.y
                 }
+
+    def __str__(self):
+        """ Docstring of __str__ method that returns a string """
+        return ("[Square] ({}) {}/{} - {}"
+                .format(self.id, self.x, self.y, self.width))
