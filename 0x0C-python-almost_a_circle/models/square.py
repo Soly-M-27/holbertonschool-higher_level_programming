@@ -7,8 +7,14 @@ class Square(Rectangle):
     """ class Square inhereting Rectangle """
 
     def __init__(self, size, x=0, y=0, id=None):
-        """ Docstring of the __init__ method. """
+        """ Docstring of the __init__ method.
+        Args:
+            size (int): integer that will be either width or height
+            x (int): x coordinate
+            y (int): u coordinate
+            id (int): integer of identification number """
         super().__init__(size, size, x, y, id)
+        self.size = size
 
     @property
     def size(self):
