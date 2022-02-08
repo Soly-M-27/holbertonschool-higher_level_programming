@@ -41,7 +41,7 @@ class Base():
                 f.write("[]")
             for x in list_objs:
                 empty_list.append(x.to_dictionary())
-            f.write(cls.to_json_string(empty_list))
+            f.write(Base.to_json_string(empty_list))
 
     @staticmethod
     def from_json_string(json_string):
