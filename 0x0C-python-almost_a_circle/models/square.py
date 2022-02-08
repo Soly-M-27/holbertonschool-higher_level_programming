@@ -31,8 +31,8 @@ class Square(Rectangle):
 
     def __str__(self):
         """ Docstring of __str__ method that returns a string """
-        return "[Square] ({}) {}/{} - {}".\
-            format(self.id, self.x, self.y, self.height)
+        return "[Square] ({}) {}/{} - {}"\
+            .format(self.id, self.x, self.y, self.height)
 
     def update(self, *args, **kwargs):
         """ Docstring update method that assigns attributes.
