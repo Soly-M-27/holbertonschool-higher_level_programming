@@ -28,16 +28,15 @@ class Square(Rectangle):
             number was passed """
         if (type(value) != int):
             raise TypeError("width must be an integer")
-        elif (value <= 0):
+        if (value <= 0):
             raise ValueError("width must be > 0")
-        else:
-            self.width = value
-            self.height = value
+        self.width = value
+        self.height = value
 
     def __str__(self):
         """ Docstring of __str__ method that returns a string """
         return "[Square] ({}) {}/{} - {}"\
-            .format(self.id, self.x, self.y, self.height)
+                .format(self.id, self.x, self.y, self.width)
 
     def update(self, *args, **kwargs):
         """ Docstring update method that assigns attributes.
