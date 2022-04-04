@@ -5,6 +5,8 @@ if (process.argv.length <= 2) {
 } else {
 	if (process.argv[2] < 0) {
 		return;
+	} else if (!parseInt(process.argv[2])) {
+		return;
 	} else {
 		for (let x = 0; x < parseInt(process.argv[2]); x++) {
 			for (let z = 0; z < parseInt(process.argv[2]); z++) {
@@ -16,6 +18,6 @@ if (process.argv.length <= 2) {
 				string += '\n';
 			}
 		}
+		console.log(string);
 	}
-	console.log(string);
 }
