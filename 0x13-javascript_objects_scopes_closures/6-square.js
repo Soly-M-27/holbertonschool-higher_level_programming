@@ -12,7 +12,7 @@ module.exports = class Square extends Rectangle {
 			for (let x = 0; x < this.width; x++) {
 				console.log(c.repeat(this.height));
 			}
-		} else if (c === 'C') {
+		} else {
 			for (let x = 0; x < this.width; x++) {
 				console.log(c.repeat(this.height));
 			}
