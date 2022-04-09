@@ -5,7 +5,7 @@ from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from model_state import State
 
-Base = declaratuve_base()
+Base = declarative_base()
 
 class City(Base):
     ''' Class City '''
