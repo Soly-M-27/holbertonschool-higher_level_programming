@@ -12,8 +12,8 @@ if __name__ == "__main__":
 Base.metadata.create_all(engine)
 Sesh = sessionmaker(bind=engine)
 sesh = Sesh()
-rec = sesh.query(State.id, State.name).from_statement(text(
-    "SELECT id, name FROM states WHERE name REGEXP '^.*a.*' ")).all()
-for id, name in rec:
-    print("{:d}: {:s}".format(id, name))
+s = '%a%'
+rec = sesh.query(State).filter(State.name.like(s)).order_by(State.id)
+for st in rec:
+    print("{}: {}".format(st.id, st.name))
 sesh.close()
