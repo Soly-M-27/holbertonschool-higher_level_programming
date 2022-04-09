@@ -11,9 +11,10 @@ if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
                            .format(*argv[1:4]), pool_pre_ping=True)
     Base.metadata.create_all(engine)
-    session = orm.sessionmaker(bind=engine)()
-    ct = (session.query(State.name, City.id, City.name).filter(
-         City.state_id == State.id).order_by(City.id))
+    Sesh = orm.sessionmaker(bind=engine)()
+    sesh = Sesh()
+    ct = session.query(State.name, City.id, City.name).filter(
+         City.state_id == State.id).order_by(City.id)
     for city in ct:
         print("{}: ({}) {}".format(*city))
     session.close()
