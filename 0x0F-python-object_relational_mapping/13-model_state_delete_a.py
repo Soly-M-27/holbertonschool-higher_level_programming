@@ -10,13 +10,13 @@ from sqlalchemy.orm import sessionmaker
 if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
              argv[1], argv[2], argv[3]), pool_pre_ping=True)
-Base.metadata.create_all(engine)
-Sesh = sessionmaker(bind=engine)
-sesh = Sesh()
-rec = sesh.query(State).from_statement(text(
-    "SELECT * FROM states WHERE name REGEXP '^.*a.*' "
-    )).all()
-for state in rec:
-    sesh.delete(state)
-sesh.commit()
-sesh.close()
+    Base.metadata.create_all(engine)
+    Sesh = sessionmaker(bind=engine)
+    sesh = Sesh()
+    rec = sesh.query(State).from_statement(text(
+        "SELECT * FROM states WHERE name REGEXP '^.*a.*' "
+        )).all()
+    for state in rec:
+        sesh.delete(state)
+    sesh.commit()
+    sesh.close()
