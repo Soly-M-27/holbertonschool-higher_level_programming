@@ -7,6 +7,7 @@ from model_state import State
 
 Base = declarative_base()
 
+
 class City(Base):
     ''' Class City which inherits from State'''
     __tablename__ = "cities"
