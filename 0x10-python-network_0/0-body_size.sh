@@ -2,6 +2,6 @@
 # Bash script that takes in a URL,
 # sends a request to that URL,
 # and displays the size of the body
-# of the response
+# of the response.
 
 curl -so /dev/null https://www.google.com/ -w '%{size_download}\n'
