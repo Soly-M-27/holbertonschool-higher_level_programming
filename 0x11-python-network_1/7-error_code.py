@@ -10,4 +10,4 @@ if __name__ == "__main__":
     if body.status_code >= 400:
         print("Error code: {}".format(body.status_code))
     else:
-        print(body)
+        print(body.content.decode('utf-8'))
