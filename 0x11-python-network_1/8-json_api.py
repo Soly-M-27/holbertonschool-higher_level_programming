@@ -17,9 +17,6 @@ if __name__ == "__main__":
         if body.json().get('id') is not None:
             print("[{}] {}".format(body.json().get('id'), body.json().get('name')))
         else:
-            if not body.json():
-                print("Not a valid JSON")
-            elif body.json() is None:
-                print("No result")
+            print("No result")
     except:
         print("Not a valid JSON")
