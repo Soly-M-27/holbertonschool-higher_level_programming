@@ -13,9 +13,9 @@ if __name__ == "__main__":
         param = {'q': ""}
 
     try:
-        body = requests.post('http://0.0.0.0:5000/search_user', param)
-        if body.json().get('id') is not None:
-            print("[{}] {}".format(body.json().get('id'), body.json().get('name')))
+        b = requests.post('http://0.0.0.0:5000/search_user', param)
+        if b.json().get('id') is not None:
+            print("[{}] {}".format(b.json().get('id'), b.json().get('name')))
         else:
             print("No result")
     except:
