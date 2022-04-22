@@ -12,11 +12,14 @@ if __name__ == "__main__":
     except:
         param = {'q': ""}
 
-    body = requests.post('http://0.0.0.0:5000/search_user', param)
-    if body.json().get('id') is not None:
-        print("[{}] {}".format(body.json().get('id'), body.json().get('name')))
-    else:
-        if not body.json():
-            print("Not a valid JSON")
-        elif body.json() is None:
-            print("No result")
+    try:
+        body = requests.post('http://0.0.0.0:5000/search_user', param)
+        if body.json().get('id') is not None:
+            print("[{}] {}".format(body.json().get('id'), body.json().get('name')))
+        else:
+            if not body.json():
+                print("Not a valid JSON")
+            elif body.json() is None:
+                print("No result")
+    except:
+        print("Not a valid JSON")
