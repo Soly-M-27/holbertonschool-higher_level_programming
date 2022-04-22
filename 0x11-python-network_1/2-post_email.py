@@ -11,5 +11,8 @@ import sys
 if __name__ == "__main__":
     data = urllib.parse.urlencode({"email": sys.argv[2]}).encode('utf-8')
 
-    with urllib.request.urlopen(sys.argv[1], data) as res:
-        print("{}".format(res.read()))
+    try:
+        with urllib.request.urlopen(sys.argv[1], data) as res:
+            print("{}".format(res.read()))
+    except ConnectionRefuseError:
+        pass
