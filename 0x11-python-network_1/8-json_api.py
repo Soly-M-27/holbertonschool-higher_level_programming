@@ -8,12 +8,13 @@ import sys
 
 if __name__ == "__main__":
     args = sys.argv
-    if len(args) == 0:
-        print("No result")
-    elif len(args) > 0:
-        if sys.argv[1]:
+    try:
+        if len(args) == 0:
+            print("No result")
+    except:
+        try:
             jsonvar = {'q': sys.argv[1]}
-        else:
+        except:
             jsonvar = {'q': ""}
 
         body = requests.post('http://0.0.0.0:5000/search_user', jsonvar)
