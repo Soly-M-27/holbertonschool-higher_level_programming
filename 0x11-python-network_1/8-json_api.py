@@ -18,5 +18,5 @@ if __name__ == "__main__":
     else:
         if not body.json():
             print("Not a valid JSON")
-        elif body.json() == "":
+        elif body.json() is None:
             print("No result")
