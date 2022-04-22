@@ -8,7 +8,5 @@ import sys
 
 if __name__ == "__main__":
 
-    URL = sys.argv[1]
-
-    with urllib.request.urlopen(URL) as res:
-        print(res.getheader('X-Request-Id'))
+    with urllib.request.urlopen(sys.aqrv[1]) as res:
+        print("{}".format(res.getheader('X-Request-Id')))
