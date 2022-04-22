@@ -9,10 +9,8 @@ import urllib.parse
 import sys
 
 if __name__ == "__main__":
+    Req = urllib.request.Request(sys.argv[1])
     data = urllib.parse.urlencode({"email": sys.argv[2]}).encode('utf-8')
 
-    try:
-        with urllib.request.urlopen(sys.argv[1], data) as res:
-            print("{}".format(res.read()))
-    except ConnectionRefuseError:
-        pass
+    with urllib.request.urlopen(Req, data) as res:
+        print("{}".format(res.read()))
