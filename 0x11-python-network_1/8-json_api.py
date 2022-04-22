@@ -13,7 +13,7 @@ if __name__ == "__main__":
         param = {'q': ""}
 
     body = requests.post('http://0.0.0.0:5000/search_user', param)
-    if body.json() and body is not None:
+    if body.json() and body.json() is not None:
         print("[{}] {}".format(body.json().get('id'), body.json().get('name')))
     else:
         if not body.json():
