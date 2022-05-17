@@ -3,11 +3,11 @@
 
 const fs = require('fs');
 
-const readStream = fs.createReadStream(process.argv[2]);
+const readStream = process.argv[2];
 
-const content = process.argv[3];
+const content = process.argv[3] + '\n';
 
-fs.writeFile(readStream.toString(), content, 'utf8', function(err) {
+fs.writeFile(readStream, content, 'utf8', function(err) {
   if (err) {
     console.log(err);
   }
