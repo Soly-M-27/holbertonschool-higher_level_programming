@@ -3,7 +3,7 @@
 
 const fs = require('fs');
 
-const readStream = fs.createReadStream('./cisfun', 'utf8');
+const readStream = fs.createReadStream(process.argv[2], 'utf8');
 
 readStream
   .on('data', function (chunk) {
