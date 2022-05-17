@@ -7,7 +7,7 @@ const readStream = fs.createReadStream(process.argv[2]);
 
 const content = process.argv[3];
 
-fs.writeFile(readStream, content, 'utf8', function(err) {
+fs.writeFile(readStream.toString(), content, 'utf8', function(err) {
   if (err) {
     console.log(err);
   }
