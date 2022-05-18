@@ -14,7 +14,7 @@ request(content, function (err, res, allcontent) {
     console.log(err);
   }
 
-  fs.writeFile(file, content, 'utf8', function (err) {
+  fs.writeFile(file, allcontent, 'utf8', function (err) {
     if (err) {
       console.log(err);
     }
