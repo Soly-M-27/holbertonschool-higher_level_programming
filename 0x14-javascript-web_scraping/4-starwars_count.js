@@ -5,6 +5,7 @@
 
 const request = require('request');
 const url = process.argv[2];
+let count = 0;
 
 request(url, function (err, res, body) {
   if (res.statusCode === 200) {
@@ -13,11 +14,11 @@ request(url, function (err, res, body) {
       const moviestars = movies[id].characters;
       for (const star in moviestars) {
         if (moviestars[star].includes('18')) {
-			const count = console.count('Wedge Antilles');
+          count++;
         }
       }
     }
-	console.log(parseInt(count));
+    console.log(count);
   } else if (err) {
     console.log(err);
   } else {
