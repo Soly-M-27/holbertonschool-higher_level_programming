@@ -5,9 +5,10 @@ const request = require('request');
 
 const url = process.argv[2];
 
-request(url, function (err, body) {
+request(url, function (res, err, body) {
 	if (err) {
 		console.log(err);
+		return;
 	}
 	const todo = JSON.parse(body).results;
 	const completed = {};
