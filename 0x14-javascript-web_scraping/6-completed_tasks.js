@@ -8,6 +8,7 @@ const url = process.argv[2];
 request(url, function (res, err, body) {
   if (err) {
     console.error(err);
+    return;
   }
   const todo = JSON.parse(body);
   const completed = {};
