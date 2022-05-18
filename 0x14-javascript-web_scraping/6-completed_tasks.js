@@ -7,10 +7,9 @@ const url = process.argv[2];
 
 request(url, function (res, err, body) {
 	if (err) {
-		console.log(err);
-		return;
+		console.error(err);
 	}
-	const todo = JSON.parse(body).results;
+	const todo = JSON.parse(body);
 	const completed = {};
 	for (const task in todo) {
 		if (task.completed) {
