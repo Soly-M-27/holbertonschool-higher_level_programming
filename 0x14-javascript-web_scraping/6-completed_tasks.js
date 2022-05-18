@@ -18,5 +18,4 @@ request(url, function (err, body) {
 		}
 	}
 	console.log(completed);
-
 });
