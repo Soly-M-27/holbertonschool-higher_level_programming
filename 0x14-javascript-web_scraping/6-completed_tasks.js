@@ -10,8 +10,11 @@ request(url, (error, res, body) => {
     console.error(error);
     return;
   }
+
   const todo = JSON.parse(body);
+
   const completed = {};
+
   for (const task in todo) {
     if (task.completed) {
       const id = task.userId;
