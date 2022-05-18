@@ -13,10 +13,11 @@ request(url, function (err, res, body) {
       const moviestars = movies[id].characters;
       for (const star in moviestars) {
         if (moviestars[star].includes('18')) {
-          console.count('Wedge Antilles');
+			const count = console.count('Wedge Antilles');
         }
       }
     }
+	console.log(parseInt(count));
   } else if (err) {
     console.log(err);
   } else {
