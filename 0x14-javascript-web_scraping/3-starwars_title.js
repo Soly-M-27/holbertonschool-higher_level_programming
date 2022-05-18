@@ -4,17 +4,13 @@
  * number matches a given integer */
 
 const axios = require('axios');
+const id = proces.argv[2];
+const url = "https://swapi-api.hbtn.io/api/films/";
 
-const id = process.argv[2];
-
-const url = 'https://swapi-api.hbtn.io/api/films/' + id;
-
-axios(url, function (res, err, body) {
-  if (err) {
-    console.log(err);
-  } else if (body) {
-    console.log(body);
-  } else {
-    console.log(res);
-  }
+const res = await axios.get(url, {
+	params: {
+		'episode_id': id
+	}
 });
+
+res.data.params['episode_id'];
