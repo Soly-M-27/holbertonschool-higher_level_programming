@@ -3,14 +3,14 @@
  * Star Wars movie where the episode
  * number matches a given integer */
 
-const axios = require('axios');
+const request = require('request');
 const id = process.argv[2];
-const url = 'https://swapi-api.hbtn.io/api/films/';
+const url = 'https://swapi-api.hbtn.io/api/films/' + id;
 
-const res = axios.get(url, {
-  params: {
-    episode_id: id
+request(url, function (err, res, body) {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log(JSON.parse(body).title);
   }
 });
-
-console.log(res.data.params.episode_id);
